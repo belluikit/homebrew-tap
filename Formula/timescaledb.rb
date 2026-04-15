@@ -19,7 +19,7 @@ class Timescaledb < Formula
   end
 
   def install
-    check_postgresql_version
+    # check_postgresql_version
     ossvar = build.with?("oss-only") ? " -DAPACHE_ONLY=1" : ""
     ssldir = Formula["openssl"].opt_prefix
 
@@ -41,8 +41,7 @@ class Timescaledb < Formula
   end
 
   def check_postgresql_version
-    if postgresql.version < Version.new('18')
-        # && postgresql.version < Version.new('18.3') && postgresql.revision < 2
+    if postgresql.version < Version.new('18') # && postgresql.version < Version.new('18.3') && postgresql.revision < 2
       odie "PostgreSQL 18.3 or higher is required, but you have #{postgresql.version}.#{postgresql.revision}"
     end
   end
