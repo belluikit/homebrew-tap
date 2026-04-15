@@ -1,9 +1,9 @@
 class Timescaledb < Formula
   desc "An open-source time-series database optimized for fast ingest and complex queries. Fully compatible with PostgreSQL."
   homepage "https://www.timescaledb.com"
-  url "https://github.com/timescale/timescaledb/archive/refs/tags/2.26.1.tar.gz"
-  sha256 "cb5fff843f79a69d9e0b67f4166fd1a5726683a491641ee272e746143ac56313"
-  version "2.26.1"
+  url "https://github.com/timescale/timescaledb/archive/refs/tags/2.26.3.tar.gz"
+  sha256 "71abcd12dc99ee8a6b64f27ab39b97da037deff74fd71d615ddb328859bed555"
+  version "2.26.3"
   env :std
 
   option "with-oss-only", "Build TimescaleDB with only Apache-2 licensed code"
@@ -32,7 +32,7 @@ class Timescaledb < Formula
     `chmod +x timescaledb_move.sh`
     `echo "#!/bin/bash" >> timescaledb_move.sh`
     `echo "echo 'Moving files into place...'" >> timescaledb_move.sh`
-    `echo "/usr/bin/install -c -m 755 \\\$(find #{lib} -name timescaledb*.dylib) #{libdir.strip}/" >> timescaledb_move.sh`
+    `echo "/usr/bin/install -c -m 755 \\\$(find #{lib} -name 'timescaledb*.dylib') #{libdir.strip}/" >> timescaledb_move.sh`
     `echo "/usr/bin/install -c -m 644 #{share}/timescaledb/* #{sharedir.strip}/extension/" >> timescaledb_move.sh`
     `echo "echo 'Success.'" >> timescaledb_move.sh`
     bin.install "timescaledb_move.sh"
