@@ -12,7 +12,7 @@ class Timescaledb < Formula
   depends_on "openssl" => :build
   depends_on "postgresql@18" => :build
   depends_on "xz" => :build
-  depends_on "trendvidia/tap/timescaledb-tools" => :recommended
+  # depends_on "trendvidia/tap/timescaledb-tools" => :recommended
 
   def postgresql
     Formula["postgresql@18"]
