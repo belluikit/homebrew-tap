@@ -2,7 +2,7 @@ class Gocaliper < Formula
   desc "Semantic code analysis and transformation MCP server for Go"
   homepage "https://github.com/trendvidia/gocaliper"
   license "MIT"
-  head "https://github.com/trendvidia/gocaliper.git", branch: "master"
+  head "https://github.com/trendvidia/gocaliper.git", branch: "main"
 
   depends_on "go" => :build
 
