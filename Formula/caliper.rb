@@ -6,7 +6,7 @@ class Caliper < Formula
   homepage "https://github.com/trendvidia/caliper"
   url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.0.1.tar.gz",
       :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "abfdbcb5740ff8c3075f5a7b910b9b9db626efc49b7c4f0cf46e90873be8e168"
   license "MIT"
   head "https://github.com/trendvidia/caliper.git", branch: "main"
 
