@@ -6,13 +6,14 @@ class Caliper < Formula
   homepage "https://github.com/trendvidia/caliper"
   url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.0.1.tar.gz",
       :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "abfdbcb5740ff8c3075f5a7b910b9b9db626efc49b7c4f0cf46e90873be8e168"
+  sha256 "8abe98d2444e2efbdd9d34078358773ff34efeceaf2756cff1362326a3ebdf8b"
   license "MIT"
   head "https://github.com/trendvidia/caliper.git", branch: "main"
 
   depends_on "go" => :build
 
   def install
+    ENV["GOFLAGS"] = "-mod=vendor"
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/caliper-mcp"
   end
 
