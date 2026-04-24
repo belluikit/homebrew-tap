@@ -1,7 +1,8 @@
 class Caliper < Formula
   desc "Semantic code analysis and transformation MCP server for Go"
   homepage "https://github.com/trendvidia/caliper"
-  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.0.0.tar.gz"
+  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.0.0.tar.gz",
+      :using => GitHubPrivateRepositoryReleaseDownloadStrategy
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
   head "https://github.com/trendvidia/caliper.git", branch: "main"
