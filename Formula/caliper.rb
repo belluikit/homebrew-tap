@@ -1,5 +1,5 @@
 
-require_relative "private_repo" 
+require_relative "../private_repo" 
 
 class Caliper < Formula
   desc "Semantic code analysis and transformation MCP server for Go"
