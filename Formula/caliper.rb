@@ -4,19 +4,24 @@ require_relative "../private_repo"
 class Caliper < Formula
   desc "Semantic code analysis and transformation MCP server for Go"
   homepage "https://github.com/trendvidia/caliper"
-  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.1.0.tar.gz",
+  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.1.1.tar.gz",
       :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "0489b2712875e3fe85b6d37c70fadf5096d151cd6c0102b1401e445c8f5b4a2f"
+  sha256 "788205e3bd2a914912f07a22f9b4dd32b2e769a1a2cd4825486d350bd5caf6d9"
   license "MIT"
   head "https://github.com/trendvidia/caliper.git", branch: "main"
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/caliper-mcp"
+    ldflags = "-s -w -X main.Version=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"caliper"),
+           "./cmd/caliper-mcp"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"caliper-analyze"),
+           "./cmd/caliper-analyze"
   end
 
   test do
     assert_predicate bin/"caliper", :executable?
+    assert_match version.to_s, shell_output("#{bin}/caliper-analyze -version")
   end
 end
