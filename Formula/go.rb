@@ -3,29 +3,29 @@ require_relative "../private_repo"
 class Go < Formula
   desc "Trendvidia \"plus\" fork of Go with extended -buildmode=plugin support"
   homepage "https://github.com/trendvidia/go"
-  version "1.26.5a"
+  version "1.27.1"
   license "BSD-3-Clause"
 
   # Prebuilt toolchain archives from the release. macOS is arm64-only
   # (no Intel build is published); Linux covers arm64 and x86_64.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/go/releases/download/v1.26.5a/go1.26.5-plus.darwin-arm64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.1/go1.27.1-plus.darwin-arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "4f7579d30dc41172f48480fd620e2df771e5ba9af9ab66fa91d8d1d2309a2f56"
+      sha256 "71893baf6faf21a828b19e4dc57abbadfab08055f627fa540b263bb3dd7ba0fc"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/go/releases/download/v1.26.5a/go1.26.5-plus.linux-arm64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.1/go1.27.1-plus.linux-arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "1318426fcd2b66aa486cbe56c7824696b28e4454ab736b1b0de20211eb04901e"
+      sha256 "a29a1d9b314e6ba7accb73f055cfcba28d9cf0c9e429997c905cc99dca71ba57"
     end
     on_intel do
-      url "https://github.com/trendvidia/go/releases/download/v1.26.5a/go1.26.5-plus.linux-amd64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.1/go1.27.1-plus.linux-amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "63e51419e49b287f6e49cec14cad99d6d4ece34342e18e97288ed84d0bac9636"
+      sha256 "d8797ae96c237fca63948b3f2d2daa677bf9e3b1a2bacf918cbd9f7790c5add4"
     end
   end
 
@@ -47,8 +47,11 @@ class Go < Formula
   end
 
   test do
-    # Must be the fork toolchain.
-    assert_match "(plus)", shell_output("#{bin}/go version")
+    # Must be the fork toolchain, and must be THIS release. The old
+    # assertion only checked for "(plus)", which any fork build satisfies,
+    # so a stale url/sha pair would still have passed. forkVersionMarker in
+    # the toolchain names the release tag, so pin to it via version.
+    assert_match "(plus v#{version})", shell_output("#{bin}/go version")
 
     (testpath/"hello.go").write <<~GO
       package main
