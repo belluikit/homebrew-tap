@@ -7,21 +7,18 @@
 # Download strategy for a source archive from a private GitHub repository,
 # adding the token from HOMEBREW_GITHUB_API_TOKEN to the request.
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
-  def initialize(url, name, version, **meta)
-    super
-    set_github_token
-  end
-
-  def set_github_token
-    @github_token = ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", nil)
-    return if @github_token
-
-    raise CurlDownloadStrategyError, "HOMEBREW_GITHUB_API_TOKEN is required."
-  end
-
   def _fetch(url:, resolved_url:, timeout:)
     # Adds the token to the curl command headers
-    curl_download resolved_url, "--header", "Authorization: token #{@github_token}", to: temporary_path
+    curl_download resolved_url, "--header", "Authorization: token #{github_token}", to: temporary_path
+  end
+
+  # Read on demand rather than in the constructor: Homebrew strips every
+  # token-like variable from the environment before a build runs, so a strategy
+  # instantiated in the build child process (staging an already-cached
+  # resource) must not fail merely by existing. Only a real download needs it.
+  def github_token
+    @github_token ||= ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", nil) ||
+                      raise(CurlDownloadStrategyError, "HOMEBREW_GITHUB_API_TOKEN is required.")
   end
 end
 
@@ -46,7 +43,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   def _fetch(url:, resolved_url:, timeout:)
     curl_download asset_endpoint,
                   "--header", "Accept: application/octet-stream",
-                  "--header", "Authorization: token #{@github_token}",
+                  "--header", "Authorization: token #{github_token}",
                   to: temporary_path
   end
 
