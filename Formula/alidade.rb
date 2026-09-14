@@ -3,7 +3,7 @@ require_relative "../private_repo"
 class Alidade < Formula
   desc "Code intelligence over MCP: Go, .proto, SQL, .pxf and Markdown as one graph"
   homepage "https://github.com/trendvidia/alidade"
-  version "0.5.3"
+  version "0.6.0"
   license "MIT"
 
   # Release binaries rather than a source build: alidade's dependencies
@@ -13,27 +13,27 @@ class Alidade < Formula
   # with CGO_ENABLED=0 and attaches a checksums file next to them.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.5.3/alidade_0.5.3_darwin_arm64.tar.gz",
+      url "https://github.com/trendvidia/alidade/releases/download/v0.6.0/alidade_0.6.0_darwin_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "a1169b9a8e7cf0f116a8bb93971c5a8847ab6b838b1e92d6184af04b00b34919"
+      sha256 "e3c9e0693d2d83825b275a570068e43b7ec4a5dfc4acf2e5d708320f623c1b1d"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.5.3/alidade_0.5.3_darwin_amd64.tar.gz",
+      url "https://github.com/trendvidia/alidade/releases/download/v0.6.0/alidade_0.6.0_darwin_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "4487c3262a63b8bd8112df5c3df8e9a31e545cf1843553b473b585c05e3f1349"
+      sha256 "99fc155adb4796df4dbb6648977f18fce7312a6caf6e5f8cb7f5c25de52ccb9a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.5.3/alidade_0.5.3_linux_arm64.tar.gz",
+      url "https://github.com/trendvidia/alidade/releases/download/v0.6.0/alidade_0.6.0_linux_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "1d8c584ae4cddaef9a6d9c048f42481a8e0fe157e3a982eca3c6ae7fe6816f20"
+      sha256 "595d2ef9649e7f9e17ee7eed2fd57d350f13b56720ddecb75dba884b48011e6a"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.5.3/alidade_0.5.3_linux_amd64.tar.gz",
+      url "https://github.com/trendvidia/alidade/releases/download/v0.6.0/alidade_0.6.0_linux_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "589e64c079ea7c7e339a89f72fe2c232400b9d681b6bd4e45c1225837bf0b9d9"
+      sha256 "d4f5e250cd908ae6c8807b51f6e0a83a318857293bd36e843df7fa8a225ddf8d"
     end
   end
 
