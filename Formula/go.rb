@@ -3,29 +3,29 @@ require_relative "../private_repo"
 class Go < Formula
   desc "Trendvidia \"plus\" fork of Go with extended -buildmode=plugin support"
   homepage "https://github.com/trendvidia/go"
-  version "1.27.1a"
+  version "1.27.2"
   license "BSD-3-Clause"
 
   # Prebuilt toolchain archives from the release. macOS is arm64-only
   # (no Intel build is published); Linux covers arm64 and x86_64.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/go/releases/download/v1.27.1a/go1.27.1-plus.darwin-arm64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.2/go1.27.2-plus.darwin-arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "b0907822b647d7b4172bbc17f75d76fa7b238742c836208d425c1046b3a54ba1"
+      sha256 "cd27b2d2d5887189a69704b4f26abce1e24ed815d35384d690c718d38b08d076"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/go/releases/download/v1.27.1a/go1.27.1-plus.linux-arm64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.2/go1.27.2-plus.linux-arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f285637db640a6a5c5f205286ac28184076e6c6135c89d1a6ca629d3ae3e9a59"
+      sha256 "979f0411b66fe29f817cececa0450387f14a017353ea352a0a598d237f0b8fe5"
     end
     on_intel do
-      url "https://github.com/trendvidia/go/releases/download/v1.27.1a/go1.27.1-plus.linux-amd64.tar.gz",
+      url "https://github.com/trendvidia/go/releases/download/v1.27.2/go1.27.2-plus.linux-amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "dc65417375a73e918c229248209e5617d3b4bfab72e3d5e67df99681c21bac7d"
+      sha256 "e7bb08ba2c737f2b8cf2ca33690c56fbc8416442650bf5b9d43f6850a629b33c"
     end
   end
 
