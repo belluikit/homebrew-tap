@@ -4,9 +4,9 @@ require_relative "../private_repo"
 class Caliper < Formula
   desc "Semantic code analysis and transformation MCP server for Go"
   homepage "https://github.com/trendvidia/caliper"
-  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.6.0.tar.gz",
+  url "https://github.com/trendvidia/caliper/archive/refs/tags/v1.6.1.tar.gz",
       :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "69946555b5517833a49b1d2e9210a374f8afe53b9bc652d4b087e30236c9e12f"
+  sha256 "7ff3440b2098d2a14e78743ae436431d9aedc6e50ab6cfa8e86d06e1af776d52"
   license "MIT"
   head "https://github.com/trendvidia/caliper.git", branch: "main"
 
