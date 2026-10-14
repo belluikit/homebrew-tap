@@ -1,7 +1,7 @@
 class Alidade < Formula
   desc "Code graph over MCP: Go, TypeScript, Svelte, proto, SQL, PXF and Markdown"
   homepage "https://github.com/trendvidia/alidade"
-  version "0.12.0"
+  version "0.12.1"
   license "MIT"
 
   # Release binaries rather than a source build: alidade links V8, for
@@ -12,23 +12,23 @@ class Alidade < Formula
   # checksums file next to them.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_darwin_arm64.tar.gz"
-      sha256 "faca649c7f3872e6af03903c87533aed096e8321795b71007ea63265997bd609"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_darwin_arm64.tar.gz"
+      sha256 "fa77bb518ee892755bf42426a675e51fe8fd961207c3d6e77f1a6d58cd1c3c73"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_darwin_amd64.tar.gz"
-      sha256 "c6072b6b651158aa43bf6a4e31cb2df97e4f178c633d9bec207425ab26c209b5"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_darwin_amd64.tar.gz"
+      sha256 "82021790f4bb2a29da81271d7ee34e852ae64ceb8aba3b6a4f8fa6175ba25cac"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_linux_arm64.tar.gz"
-      sha256 "1dec380425e568229aa52a29d0f996d74d88ef02600b5b4f079fc60b73e59063"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_linux_arm64.tar.gz"
+      sha256 "82a1f78005870500a733838e063117aa69096522f67ba738bd373bcf0d77cec2"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_linux_amd64.tar.gz"
-      sha256 "2eab00bf865c7a41e5e5690e60d763c6b5d2ec6ec60a93693fc03f12a5a2d659"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_linux_amd64.tar.gz"
+      sha256 "e0e8d543061b1e707a0e0e6c92c2b8a97e55901a1618beb497fb28c5bd657841"
     end
   end
 
