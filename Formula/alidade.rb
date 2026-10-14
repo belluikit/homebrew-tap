@@ -1,34 +1,34 @@
 class Alidade < Formula
   desc "Code graph over MCP: Go, TypeScript, Svelte, proto, SQL, PXF and Markdown"
-  homepage "https://github.com/trendvidia/alidade"
-  version "0.12.1"
+  homepage "https://github.com/belluikit/alidade"
+  version "0.13.0"
   license "MIT"
 
   # Release binaries rather than a source build: alidade links V8, for
   # Svelte components, and CPython, for Python calls, so every target is a
   # cgo build against prebuilt static libraries, darwin with clang and
   # linux cross-compiled with zig, which needs glibc 2.29 or newer. The
-  # release workflow in trendvidia/alidade builds them and attaches a
+  # release workflow in belluikit/alidade builds them and attaches a
   # checksums file next to them.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_darwin_arm64.tar.gz"
-      sha256 "fa77bb518ee892755bf42426a675e51fe8fd961207c3d6e77f1a6d58cd1c3c73"
+      url "https://github.com/belluikit/alidade/releases/download/v0.13.0/alidade_0.13.0_darwin_arm64.tar.gz"
+      sha256 "cd337386466d88caa7a66745043ca555ddc48fa70e2f42800625ba9d9d52bf79"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_darwin_amd64.tar.gz"
-      sha256 "82021790f4bb2a29da81271d7ee34e852ae64ceb8aba3b6a4f8fa6175ba25cac"
+      url "https://github.com/belluikit/alidade/releases/download/v0.13.0/alidade_0.13.0_darwin_amd64.tar.gz"
+      sha256 "88c5e7f1c786075220f9e02844853547abc651657b7d27a34b85c730a8bcb049"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_linux_arm64.tar.gz"
-      sha256 "82a1f78005870500a733838e063117aa69096522f67ba738bd373bcf0d77cec2"
+      url "https://github.com/belluikit/alidade/releases/download/v0.13.0/alidade_0.13.0_linux_arm64.tar.gz"
+      sha256 "755a31399cf3fdf042a4a397c0417c391be19a9d59888a2a5a749feb8a45e09c"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade/releases/download/v0.12.1/alidade_0.12.1_linux_amd64.tar.gz"
-      sha256 "e0e8d543061b1e707a0e0e6c92c2b8a97e55901a1618beb497fb28c5bd657841"
+      url "https://github.com/belluikit/alidade/releases/download/v0.13.0/alidade_0.13.0_linux_amd64.tar.gz"
+      sha256 "4a55bc545de8c49cc30ab3aed435b31e3353ca85f2ee39b8d816af3c7c6581b6"
     end
   end
 
