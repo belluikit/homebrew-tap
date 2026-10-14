@@ -1,41 +1,34 @@
-require_relative "../private_repo"
-
 class Alidade < Formula
   desc "Code graph over MCP: Go, TypeScript, Svelte, proto, SQL, PXF and Markdown"
   homepage "https://github.com/trendvidia/alidade"
-  version "0.11.0"
+  version "0.12.0"
   license "MIT"
 
-  # Release binaries rather than a source build: alidade's dependencies
-  # (caliper, protowire-go, protocompile, chameleon) are private modules
-  # Homebrew's sandbox cannot fetch, and a committed vendor tree is the
-  # wrong price. The release workflow in trendvidia/alidade builds these
-  # with cgo, linking V8 for Svelte components (v0.10.0, #221): darwin
-  # with clang, linux cross-compiled with zig, which needs glibc 2.29 or
-  # newer. It attaches a checksums file next to them.
+  # Release binaries rather than a source build: alidade links V8, for
+  # Svelte components, and CPython, for Python calls, so every target is a
+  # cgo build against prebuilt static libraries, darwin with clang and
+  # linux cross-compiled with zig, which needs glibc 2.29 or newer. The
+  # release workflow in trendvidia/alidade builds them and attaches a
+  # checksums file next to them.
   on_macos do
     on_arm do
-      url "https://github.com/trendvidia/alidade-archive/releases/download/v0.11.0/alidade_0.11.0_darwin_arm64.tar.gz",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7ec940069212ae67fb041264f28756bf3d01b8caf689bcf98ac1ee83f1fbe865"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_darwin_arm64.tar.gz"
+      sha256 "faca649c7f3872e6af03903c87533aed096e8321795b71007ea63265997bd609"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade-archive/releases/download/v0.11.0/alidade_0.11.0_darwin_amd64.tar.gz",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "0b73d9b2d86d7d3cf3869de5afeef74615c1f9bdf179fea214af934a99d1da86"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_darwin_amd64.tar.gz"
+      sha256 "c6072b6b651158aa43bf6a4e31cb2df97e4f178c633d9bec207425ab26c209b5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/trendvidia/alidade-archive/releases/download/v0.11.0/alidade_0.11.0_linux_arm64.tar.gz",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "037f3de9a097d76cd57a4148538a71214cd7cec57658ef5c584054535ecfbabc"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_linux_arm64.tar.gz"
+      sha256 "1dec380425e568229aa52a29d0f996d74d88ef02600b5b4f079fc60b73e59063"
     end
     on_intel do
-      url "https://github.com/trendvidia/alidade-archive/releases/download/v0.11.0/alidade_0.11.0_linux_amd64.tar.gz",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "fefbdab30fcd2e5e75e2df6993994be7b6f55a91dcb90ca3d363cf05d647172d"
+      url "https://github.com/trendvidia/alidade/releases/download/v0.12.0/alidade_0.12.0_linux_amd64.tar.gz"
+      sha256 "2eab00bf865c7a41e5e5690e60d763c6b5d2ec6ec60a93693fc03f12a5a2d659"
     end
   end
 
