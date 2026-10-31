@@ -1,7 +1,7 @@
 class Alidade < Formula
   desc "Code graph over MCP: Go, TypeScript, Svelte, proto, SQL, PXF and Markdown"
   homepage "https://github.com/belluikit/alidade"
-  version "0.14.0"
+  version "0.15.0"
   license "MIT"
 
   # Release binaries rather than a source build: alidade links V8, for
@@ -12,23 +12,23 @@ class Alidade < Formula
   # checksums file next to them.
   on_macos do
     on_arm do
-      url "https://github.com/belluikit/alidade/releases/download/v0.14.0/alidade_0.14.0_darwin_arm64.tar.gz"
-      sha256 "b95c4844a4b05dee25e963ae2d1032e7ef13606c5577b29daf6add8249504378"
+      url "https://github.com/belluikit/alidade/releases/download/v0.15.0/alidade_0.15.0_darwin_arm64.tar.gz"
+      sha256 "cab38d4404de92ef3c1a995588d850d05327413ebaf1483b11796d25db048a97"
     end
     on_intel do
-      url "https://github.com/belluikit/alidade/releases/download/v0.14.0/alidade_0.14.0_darwin_amd64.tar.gz"
-      sha256 "55e23ab267b458844a524ca3d8856de46dda7ed59c152a575c6f00c1cfd9c1e8"
+      url "https://github.com/belluikit/alidade/releases/download/v0.15.0/alidade_0.15.0_darwin_amd64.tar.gz"
+      sha256 "ccaddbd04d08afadee9ae0ef36bc7cf1a01c4afd9d65e79ab9fb417b634edc8b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/belluikit/alidade/releases/download/v0.14.0/alidade_0.14.0_linux_arm64.tar.gz"
-      sha256 "f81bb7709b08d8c4a4c68cd0fc2c512ac6cf6b5bb2277e5189d968b1f7000bf5"
+      url "https://github.com/belluikit/alidade/releases/download/v0.15.0/alidade_0.15.0_linux_arm64.tar.gz"
+      sha256 "498dccad4ed9ee346dd0323b74b144c27289416a7fe363829f055443fb4a268f"
     end
     on_intel do
-      url "https://github.com/belluikit/alidade/releases/download/v0.14.0/alidade_0.14.0_linux_amd64.tar.gz"
-      sha256 "41c4f5c85028cb9bffe3d4ba49a12b8db7d55ebc2e11dbabd63690e2960f3d91"
+      url "https://github.com/belluikit/alidade/releases/download/v0.15.0/alidade_0.15.0_linux_amd64.tar.gz"
+      sha256 "985a92d479e440449bf5a3cf04845cd3fda8caa8f9033392949004191ee8e21f"
     end
   end
 
